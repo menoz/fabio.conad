@@ -1,0 +1,153 @@
+/**
+  * @version 1.1
+  * @copyright (C) 2013-2014 by Simone Conti, ITnok
+ **/
+/* . GENERAL LESS - GLOBAL CONFIG (CLASSES) . */
+
+body{
+	font-size: 13px;
+}
+
+.container-page {
+  margin-top: 70px;
+}
+.container-page .btn-block {
+  margin-bottom: 30px;
+}
+.container-page .btn-block h2,
+.container-page .btn-block h4,
+.container-page .btn-block .fa {
+  text-shadow: 1px 1px 0px white;
+}
+.container-page .btn-block h4 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.container-login .logo {
+  padding-bottom: 10px;
+}
+.container-login .well {
+  text-align: center;
+}
+.container-login .well h2,
+.container-login .well h4,
+.container-login .well span.fa {
+  color: #888;
+  text-shadow: 1px 1px 0px white;
+}
+.container-login .well h4 {
+  width: 75%;
+}
+.container-login .well .form-signin {
+  padding: 10px 0px;
+}
+.container-login .well .form-signin .form-signin-heading {
+  margin-bottom: 10px;
+}
+.container-login .well .form-signin input[type="text"],
+.container-login .well .form-signin input[type="password"] {
+  margin-bottom: 15px;
+  padding: 7px 9px;
+  height: auto;
+  font-size: 1.4em;
+}
+.container-login .well .form-signin .btn {
+  font-size: 1.4em;
+}
+.container-index .badge {
+  position: absolute;
+  top: -15px;
+  right: -5px;
+  background: #e2001a;
+  padding: 5px 9px;
+  font-size: 1.4em;
+  -webkit-border-radius: 15px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 15px;
+  -moz-background-clip: padding;
+  border-radius: 15px;
+  background-clip: padding-box;
+}
+.container-sendlink .btn-spaced {
+  margin-bottom: 10px;
+}
+.container-sendlink .icon {
+  padding-left: 20px;
+}
+.container-sendlink .icon img {
+  min-width: 32px;
+}
+.container-sendlink .text {
+  text-align: left;
+  overflow: hidden;
+}
+.container-sendlink .text .order,
+.container-sendlink .text .product,
+.container-sendlink .text .user,
+.container-sendlink .text .email {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.container-sendlink .text .order,
+.container-sendlink .text .email {
+  font-size: 0.8em;
+}
+.container-sendlink .fa-sup {
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  cursor: pointer;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .container-sendlink .fa-sup {
+	right: 30px;
+  }
+}
+.container-sendlink form > h5,
+.container-sendlink form > p {
+  margin: 0px;
+}
+.container-turnover .well {
+  padding-bottom: 5px;
+}
+@media (max-width: 767px) {
+  .container-turnover .well {
+	margin-left: 0px;
+	margin-right: 0px;
+  }
+}
+.container-turnover #rgraph {
+  min-height: 180px;
+}
+.container-turnover .turnover-values {
+  margin-top: 20px;
+  padding-top: 10px;
+}
+.container-turnover .turnover-values h3 {
+  margin-top: 5px;
+}
+.container-turnover .turnover-values h5.orders {
+  margin-top: 0px;
+}
+.popover-order-rows {
+  max-width: 400px;
+}
+.popover-order-rows table tr {
+  border-bottom: 1px solid #888;
+  vertical-align: top;
+}
+.popover-order-rows table tr td {
+  padding: 5px;
+}
+.popover-order-rows table tr td.order-id {
+  text-align: right;
+}
+.popover-order-rows table tr td.order-name {
+  text-align: left;
+}
+.popover-order-rows table tr td.order-qty {
+  text-align: center;
+}
+.popover-order-rows table tr td.order-price {
+  text-align: right;
+}
