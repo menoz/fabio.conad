@@ -1,5 +1,10 @@
 <?php
 
+/**
+*
+* Nota di Credito Class (extends invoice)
+*
+*/
 class NdC extends Invoice{
 
 	public function __construct() {
@@ -13,6 +18,12 @@ class NdC extends Invoice{
 
 }
 
+
+/**
+*
+* Fattura Class
+*
+*/
 class Invoice{
 
 	public $number;
@@ -43,7 +54,11 @@ class Invoice{
 }
 
 
-
+/**
+*
+* DDT class
+*
+*/
 class DDT{
 
 	public $customer_code;
@@ -71,7 +86,11 @@ class DDT{
 }
 
 
-
+/**
+*
+* DDT row class
+*
+*/
 class DDT_Row{
 
 	public $code;
@@ -86,6 +105,11 @@ class DDT_Row{
 
 
 
+/**
+*
+* Conad exporter: takes care of exporting TXT file with data imported from XML files
+*
+*/
 class ConadExporter {
 
 	private $txt = "";
