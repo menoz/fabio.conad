@@ -62,6 +62,7 @@ class Invoice{
 class DDT{
 
 	public $customer_code;
+	public $customer_codes;
 	public $number;
 	public $date_timestamp;
 	private $rows;
@@ -73,6 +74,38 @@ class DDT{
 
 		$this->rows = array();
 
+		$this->customer_codes = array(
+
+			"superm del po pdv via don minzoni"  =>  "132334",
+			"superm.belvedere pdv casalgrande"  =>  "13245",
+			"il colle snc di incerti telani & c. snc"  =>  "556",
+			"supermercato conad cella snc"  =>  "301162",
+			"nuova sup. boiardo s.n.c. di marazzi edoardo & c. v.mazzini"  =>  "824",
+			"supermercato il giglio"  =>  "301149",
+			"sup.san biagio srl pdv rubiera"  =>  "301163",
+			"sup.nuova baragalla pdv s.ilario"  =>  "301146",
+			"le vele srl"  =>  "301090",
+			"nuova baragalla snc  pv bibbiano"  =>  "8098",
+			"c.tro mercato reggio sud - pdv cadelbosco"  =>  "13222",
+			"nuovo supermercato poviglio snc"  =>  "301139",
+			"centro mercato reggio sud  snc"  =>  "362",
+			"superm. le querce srl - le querce"  =>  "825",
+			"nuova baragalla snc pv traversetolo"  =>  "301116",
+			"superm. felina snc di consonno a. & c."  =>  "13221",
+			"superm. primavera snc di schiaretti massimo"  =>  "309",
+			"bon gust srl pdv san polo"  =>  "8048",
+			"il castello snc"  =>  "13242",
+			"il colle snc p.v. montecavolo"  =>  "301107",
+			"l'arca srl pdv puianello"  =>  "13219",
+			"nuova baragalla snc"  =>  "8046",
+			"nuova baragalla snc - pv monticelli terme"  =>  "480",
+			"nuova baragalla snc- pv taneto"  =>  "301091",
+			"bassi tiziano"  =>  "301145",
+			"campus snc"  =>  "13229",
+			"supermercato le fornaci snc  pv guastalla"  =>  "301099",
+
+		);
+
 	}
 
 	public function addRow( DDT_Row $row ){
@@ -81,6 +114,19 @@ class DDT{
 
 	public function getRows(){
 		return $this->rows;
+	}
+
+	public function setCustomerCode( $name ){
+
+		$name = strtolower( trim( $name ));
+
+		if( ! array_key_exists( $name , $this->customer_codes ) ){
+			throw new Exception( 'Non esiste il codice cliente per il seguente nome: "' . $name . '"' );
+		}
+
+		$this->customer_code    =   $this->customer_codes[ $name ];
+
+		return true;
 	}
 
 }
@@ -250,7 +296,8 @@ class ConadExporter {
 			//
 			$new_ddt = new DDT();
 
-			$new_ddt->customer_code     = (string) $DDT->CustomerCode;
+			$new_ddt->setCustomerCode( (string) $DDT->DeliveryName );
+
 			$new_ddt->number            = (string) $DDT->Number;
 			$new_ddt->date_timestamp    = strtotime( $DDT->Date );
 
